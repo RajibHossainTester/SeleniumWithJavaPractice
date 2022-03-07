@@ -1,0 +1,22 @@
+//Handling drop-down
+				
+				//WebElement drp=driver.findElement(By.xpath("//*[@id='RESULT_RadioButton-9']"));
+				//Select DropDown=new Select(drp);
+				Select dropdown=new Select(driver.findElement(By.xpath("//*[@id='RESULT_RadioButton-9']")));
+				// (1) Find how many options present in a drop-down
+				System.out.println("No of Options present in drop down:" +dropdown.getOptions().size());
+				// (2) Extract all the options and print them
+				List<WebElement>options=dropdown.getOptions();
+				for(WebElement e: options)
+				{
+					System.out.println(e.getText());
+				// (3) Select option from the DropDown
+						//Select Visible Test
+					//dropdown.selectByVisibleText("Morning");
+						//Select by Index
+					//dropdown.selectByIndex(3);//Index is always starting from 0
+						//Select by Value
+					
+					dropdown.selectByValue("Radio-2");
+				}
+				
